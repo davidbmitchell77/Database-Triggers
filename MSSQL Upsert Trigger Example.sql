@@ -1,3 +1,4 @@
+@@ -1,75 +0,0 @@
 CREATE TRIGGER AccountUpsertTrigger ON Accounts
 INSTEAD OF INSERT
 AS
@@ -72,4 +73,3 @@ BEGIN
   INSERT INTO Accounts SELECT * FROM inserted i WHERE NOT EXISTS (SELECT Id from Accounts a WHERE a.Id = i.Id)
 END
 GO
-
